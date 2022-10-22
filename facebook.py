@@ -16,3 +16,5 @@ print(like(['Peter', 'Jacob']))
 print(like(['Peter', 'Jacob', 'Mark']))
 print(like(['Peter', 'Jacob', 'Mark', 'Max']))
 print(like(['Peter', 'Jacob', 'Mark', 'Max', 'Alex']))
+
+#Desafio resolvido
