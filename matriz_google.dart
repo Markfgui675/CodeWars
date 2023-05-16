@@ -70,32 +70,40 @@ void main(){
 
   // lista que armazena temporariamente a respota do usuário.
   List<dynamic> rPosition = [];
+  List<dynamic> resp = [];
   int qrPositions = 0;
 
   // interação com o usuário
   print('=-=-=-=-=-=-=-=-=-=- Teste =-=-=-=-=-=-=-=-=-=-');
-  while(true){
-    print('Linha do 1: ');
-    int l = int.parse(stdin.readLineSync()!);
-
-    print('Coluna do 1: ');
-    int c = int.parse(stdin.readLineSync()!);
-
-    rPosition.add([l, c]);
-
-    print('enviar resposta? (digite 99 para enviar)');
-    int f = int.parse(stdin.readLineSync()!);
-    if(f==99){
-      break;
-    }
-  }
   
+  for(int r = 0; r < result['qPositions']; r++){
+    stdout.write('Linha: ');
+    int l = int.parse(stdin.readLineSync()!);
+    print('');
+    stdout.write('Coluna: ');
+    int c = int.parse(stdin.readLineSync()!);
+    print('');
+    rPosition.add([l, c]);
+  }
+
+  print(rPosition);
+  print(result['positions']);
+
   // verficação da resposta
   for(int x = 0; x < result['qPositions']; x++){
-    if(rPosition[x] == result['positions'][x]){
-      qrPositions++;
+    print(rPosition[x]);
+    print(result['positions'][x]);
+
+    List<int> resp = rPosition[x];
+
+    for(int v = 0; v < result['qPositions']; v++){
+      print('positions do V: ${result['positions'][v]}');
+      if(resp == result['positions'][v]){
+        qrPositions++;
+      }
     }
   }
+
   if(qrPositions == result['qPositions']){
     print('Aprovado no teste');
   } else {
